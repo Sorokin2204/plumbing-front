@@ -1,0 +1,36 @@
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(auto, 250px));
+  justify-content: space-evenly;
+  grid-gap: 40px;
+  background-color: #f5f3f0;
+  padding: 20px 20px 30px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  &:hover {
+    .name {
+      color: #9d763f;
+    }
+    .icon {
+      opacity: 0.8;
+    }
+  }
+}
+.icon {
+  width: 74px;
+  height: 60px;
+  transition: opacity 0.3s;
+}
+.name {
+  margin-top: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 20px;
+  transition: color 0.3s;
+}

@@ -1,0 +1,15 @@
+.wrap {
+  display: inline-flex;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  grid-gap: 40px;
+  justify-content: space-evenly;
+  //   grid-template-columns: repeat(3, 350px);
+  margin-bottom: 40px;
+}
+.fullBanner {
+  width: calc(100% + 10px);
+  margin-left: -10px;
+  margin-bottom: 30px;
+}
