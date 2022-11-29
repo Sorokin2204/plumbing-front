@@ -5,17 +5,11 @@ const HomeBanner3 = () => {
   return (
     <div className={clsx(styles.wrap)}>
       <div className={clsx(styles.content)}>
-        <div className={clsx(styles.title)}>БУХГАЛТЕРИЯ ПО КВАРТПЛАТЕ</div>
-        <div className={clsx(styles.bottomList)}>
-          <div className={clsx(styles.bottomItem)}>
-            <b>Серпуховская ул., д.19: </b>644-78-91, <a href="#">6447891@list.ru</a>
-          </div>
-          <div className={clsx(styles.bottomItem)}>
-            <b>наб. кан. Грибоедова, д.112:</b> 644-78-92,<a href="#"> 6447892@list.ru</a>
-          </div>
-        </div>
+        <div className={clsx(styles.title)}>БУХГАЛТЕРИЯ</div>
+<div className={clsx(styles.centerText)}>+7(812)429-39-95</div>
+          <div className={clsx(styles.subtitle)}><b>Фирфарова  Ирина Сергеевна</b></div>
         <div className={clsx(styles.bottom)}>
-          <div className={clsx(styles.bottomText)}>Часы приема бухгалтерий: Понедельник с 15:00 до 18:00, Пятница с 09:00 до 12:00</div>
+          <div className={clsx(styles.bottomText)}>Часы приема бухгалтерии: Понедельник, среда, пятница<br/>с 9-00 до 13-00</div>
           <img src="/img/banner-icon-3.png" alt="" className={clsx(styles.bottomImg)} />
         </div>
       </div>

@@ -7,7 +7,7 @@ const SelectLink = () => {
     <div className={clsx(styles.wrap)}>
       <input
         type="text"
-        placeholder="Выберите дом..."
+        placeholder="Выберите дом"
         onFocus={() => {
           setShowMenu(true);
         }}
@@ -18,16 +18,22 @@ const SelectLink = () => {
       {showMenu && (
         <div className={clsx(styles.menu)}>
           <a href="#" className={clsx(styles.menuLink)}>
-            1-я Красноармейская ул., д. 12, лит. А
+            г. Санкт-Петербург, ул. Рубинштейна, д. 20
           </a>
           <a href="#" className={clsx(styles.menuLink)}>
-            1-я Красноармейская ул., д. 12, лит. А
+            г. Всеволожск, пр. Добровольского, д.22, корп.1
           </a>
           <a href="#" className={clsx(styles.menuLink)}>
-            1-я Красноармейская ул., д. 12, лит. А
+            г. Всеволожск, ул. Северная, д. 4 
           </a>
           <a href="#" className={clsx(styles.menuLink)}>
-            1-я Красноармейская ул., д. 12, лит. А
+            г. Всеволожск, ул. Шишканя, д. 12
+          </a>
+		  <a href="#" className={clsx(styles.menuLink)}>
+            г. Всеволожск, ул. Культуры, д. 4/80
+          </a>
+		  <a href="#" className={clsx(styles.menuLink)}>
+            г. Всеволожск, пр. Октябрьский, д. 53
           </a>
         </div>
       )}

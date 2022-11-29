@@ -6,7 +6,7 @@ const HomeBanner2 = () => {
     <div className={clsx(styles.wrap)}>
       <div className={clsx(styles.content)}>
         <div className={clsx(styles.title)}>ПЛАТНЫЕ УСЛУГИ</div>
-        <div className={clsx(styles.centerText)}>900-68-06</div> <div className={clsx(styles.subtitle)}>по будням с 9 до 18</div>
+        <div className={clsx(styles.centerText)}>+7(812)429-39-95</div> <div className={clsx(styles.subtitle)}>по будням с 9-00 до 18-00</div>
         <div className={clsx(styles.bottom)}>
           <div className={clsx(styles.bottomList)}>
             <div className={clsx(styles.bottomItem)}>сантехнические работы</div>

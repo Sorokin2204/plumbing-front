@@ -7,7 +7,7 @@ const HomeNavigation = () => {
     <div className={clsx(styles.list)}>
       <div className={clsx(styles.item)}>
         <img src="/img/nav-1.png" alt="" className={clsx(styles.icon)} />
-        <div className={clsx(styles.name)}>ИНТЕРНЕТ-ПРИЕМНАЯ</div>
+        <div className={clsx(styles.name)}>Интернет-приемная</div>
       </div>
       <div className={clsx(styles.item)}>
         <img src="/img/nav-2.png" alt="" className={clsx(styles.icon)} />
@@ -19,7 +19,7 @@ const HomeNavigation = () => {
       </div>
       <div className={clsx(styles.item)}>
         <img src="/img/nav-4.png" alt="" className={clsx(styles.icon)} />
-        <div className={clsx(styles.name)}>Подать показания</div>
+        <div className={clsx(styles.name)}>Услуги</div>
       </div>
       <div className={clsx(styles.item)}>
         <img src="/img/nav-5.png" alt="" className={clsx(styles.icon)} />

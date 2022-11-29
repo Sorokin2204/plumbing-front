@@ -8,11 +8,12 @@ const HomeBanner1 = () => {
         <div className={clsx(styles.title)}>АВАРИЙНАЯ СЛУЖБА</div>
         <div className={clsx(styles.subtitle)}>круглосуточно</div>
         <div className={clsx(styles.centerText)}>
-          316-14-36, 316-27-29 <br /> 679-32-03
+          +7(812)242-10-42 <br /> +7(931)539-08-59
         </div>
         <div className={clsx(styles.bottom)}>
           <div className={clsx(styles.bottomText)}>
-            Адрес: <br /> 7-я Красноармейская ул., д. 22-24
+            заявки по аварийным ситуациям<br />
+			вызов ремонтного персонала
           </div>
           <img src="/img/banner-icon-1.png" alt="" className={clsx(styles.bottomImg)} />
         </div>

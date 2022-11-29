@@ -7,15 +7,15 @@ const Header = () => {
       <div className={clsx(styles.left)}>
         <div className={clsx(styles.info)}>
           <div className={clsx(styles.infoLabel)}>Адрес: </div>
-          <div className={clsx(styles.infoValue)}>190121, Санкт-Петербург</div>
+          <div className={clsx(styles.infoValue)}>194044, Санкт-Петербург</div>
         </div>
         <div className={clsx(styles.info)}>
           <div className={clsx(styles.infoLabel)}></div>
-          <div className={clsx(styles.infoValue)}>ул. Лабутина, д. 24</div>
+          <div className={clsx(styles.infoValue)}>ул. Смолячкова, д.12, к.2, лит А, оф.301</div>
         </div>
         <div className={clsx(styles.info)}>
           <div className={clsx(styles.infoLabel)}>e-mail: </div>
-          <div className={clsx(styles.infoValue)}>office@gks1adm.ru</div>
+          <div className={clsx(styles.infoValue)}>5-ugol2020@mail.ru</div>
         </div>
       </div>
       <img src="/img/logo.png" alt="" className={clsx(styles.logo)} />
@@ -24,27 +24,21 @@ const Header = () => {
         <div className={clsx(styles.infoLine)}>
           <div className={clsx(styles.info)}>
             <div className={clsx(styles.infoLabel)}>тел. </div>
-            <div className={clsx(styles.infoValue)}>714-16-56, </div>
+            <div className={clsx(styles.infoValue)}>(812)429-39-95</div>
           </div>
           &nbsp;{' '}
           <div className={clsx(styles.info)}>
-            <div className={clsx(styles.infoLabel)}>факс</div>
-            <div className={clsx(styles.infoValue)}>714-06-36</div>
+            <div className={clsx(styles.infoLabel)}></div>
+            <div className={clsx(styles.infoValue)}></div>
           </div>
         </div>
         <div className={clsx(styles.info)}>
-          <div className={clsx(styles.infoLabel)}>заявки и аварии:</div>
-          <div className={clsx(styles.infoValue)}>316-14-36, 316-27-29</div>
+          <div className={clsx(styles.infoLabel)}>Аварийная:</div>
+          <div className={clsx(styles.infoValue)}>(812)242-10-42, (931)539-08-59</div>
         </div>{' '}
         <div className={clsx(styles.info)}>
-          <div className={clsx(styles.infoLabel)}>мы в соц сетях:</div>
-          <div className={clsx(styles.infoSocial)}>
-            <a href="https://vk.com/feed" className={clsx(styles.infoSocialItem)}>
-              <img src="/img/vk.png" alt="" className="" />
-            </a>
-            <a href="https://telegram.org/" className={clsx(styles.infoSocialItem)}>
-              <img src="/img/telegram.png" alt="" className="" />
-            </a>
+          <div className={clsx(styles.infoLabel)}><a href="#" className={clsx(styles.infoSocialItem)}>Мы во ВКонтакте</a></div>
+          <div className={clsx(styles.infoSocial)}>      
           </div>
         </div>
       </div>

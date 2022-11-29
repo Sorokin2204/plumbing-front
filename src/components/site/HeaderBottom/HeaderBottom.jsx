@@ -6,7 +6,7 @@ import SearchHeader from '../SearchHeader/SearchHeader';
 const HeaderBottom = () => {
   return (
     <div className={clsx(styles.wrap)}>
-      <div className={clsx(styles.label)}>ВЫБЕРИТЕ ВАШ ДОМ:</div>
+      <div className={clsx(styles.label)}>Выберите ваш дом</div>
       <SelectLink />
       <SearchHeader />
     </div>

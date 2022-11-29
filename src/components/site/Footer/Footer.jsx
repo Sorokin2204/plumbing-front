@@ -4,8 +4,8 @@ import styles from './Footer.module.scss';
 const Footer = () => {
   return (
     <div className={clsx(styles.wrap)}>
-      ООО Жилкомсервис №1 Адмиралтейского района
-      <br /> © 2018 - 2022
+      ООО УК «ПЯТЬ УГЛОВ ГРУПП», © 2020-2022
+      <br />«Мы заботимся о вашем комфорте»
     </div>
   );
 };
