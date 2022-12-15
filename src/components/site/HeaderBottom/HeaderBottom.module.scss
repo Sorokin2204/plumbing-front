@@ -1,12 +1,14 @@
 .wrap {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 0 20px;
   margin-top: 30px;
   margin-bottom: 10px;
 }
 .label {
   margin-right: 6px;
+  white-space: nowrap;
 }
 @media (max-width: 900px) {
   .wrap {
