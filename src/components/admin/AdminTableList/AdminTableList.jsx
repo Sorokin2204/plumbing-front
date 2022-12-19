@@ -7,13 +7,15 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { Box, Button, CircularProgress, IconButton, Link } from '@mui/material';
+import { Box, Button, CircularProgress, IconButton } from '@mui/material';
 import { Add, Delete, Edit, OpenInBrowser, OpenInNew } from '@mui/icons-material';
 import { useNavigate } from 'react-router';
 import axios from 'axios';
 import { apiUrl } from '../../../utils/apiUrl';
 import Loading from '../Loading/Loading';
 import InfoAlert from '../InfoAlert/InfoAlert';
+import { amber, blue, cyan, deepPurple, indigo, purple, teal } from '@mui/material/colors';
+import { Link } from 'react-router-dom';
 const AdminTableList = ({ loading, data, textAddButton, rows, onEdit, onDelete, pathAdd, pathEdit, getTableListRequest = () => {}, textEmpty }) => {
   const navigate = useNavigate();
   const [deletePageRequest, setDeletePageRequest] = useState(null);
@@ -29,6 +31,7 @@ const AdminTableList = ({ loading, data, textAddButton, rows, onEdit, onDelete, 
       }, 500);
     });
   }
+  console.log(data);
   return (
     <>
       <Button
@@ -61,12 +64,34 @@ const AdminTableList = ({ loading, data, textAddButton, rows, onEdit, onDelete, 
             <TableBody>
               {data?.map((item) => (
                 <TableRow sx={{ '& td': { padding: '2px' }, '&:last-child td, &:last-child th': { border: 0 } }}>
-                  <TableCell align="center">{item?.name}</TableCell>
+                  <TableCell align="center">
+                    <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', margin: '0 auto' }}>
+                      {item?.name}
+                      {item?.type === 'page' && (item?.isFormCheckout || item?.isFormPay || item?.isFormFeedback) ? (
+                        <Box
+                          sx={{
+                            width: 'min-content',
+                            whiteSpace: 'nowrap',
+                            fontSize: '12px',
+                            margin: '0 auto',
+                            backgroundColor: item?.isFormCheckout ? deepPurple[500] : item?.isFormPay ? indigo[500] : item?.isFormFeedback ? blue[500] : 'transparent',
+                            color: '#fff',
+                            borderRadius: '4px',
+                            display: 'inline-block',
+                            padding: '1px 6px',
+                          }}>
+                          {item?.isFormCheckout ? 'Cтраница оформления услуг' : item?.isFormPay ? 'Страница оплаты услуг' : item?.isFormFeedback ? 'Страница обратной связи ' : ''}
+                        </Box>
+                      ) : (
+                        <></>
+                      )}
+                    </Box>
+                  </TableCell>
                   <TableCell align="center"> {item?.slug}</TableCell>
                   <TableCell align="center">
-                    <IconButton>
-                      <OpenInNew />
-                    </IconButton>
+                    <Link to={item?.type == 'page' ? `/${item?.slug}` : item?.type == 'news' ? `/news/${item?.slug}` : item?.type == 'house' ? `/house/${item?.slug}` : ''}>
+                      <OpenInNew sx={{ color: 'rgba(0, 0, 0, 0.54)' }} />
+                    </Link>
                   </TableCell>
                   <TableCell align="center">
                     <IconButton

@@ -8,17 +8,13 @@ import MainNews from '../../components/site/MainNews/MainNews';
 import HomeNavigation from '../../components/site/HomeNavigation/HomeNavigation';
 import HomeBanners from '../../components/site/HomeBanners/HomeBanners';
 import Footer from '../../components/site/Footer/Footer';
+import SiteLayout from '../../components/site/SiteLayout/SiteLayout';
 const HomePage = () => {
   return (
     <>
-      <div class="container">
-        <Header />
-        <HeaderBottom />
-        <MainNews />
-        <HomeNavigation />
-        <HomeBanners />
-      </div>
-      <Footer />
+      <MainNews />
+      <HomeNavigation />
+      <HomeBanners />
     </>
   );
 };

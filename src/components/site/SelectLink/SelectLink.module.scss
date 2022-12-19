@@ -2,6 +2,7 @@
   margin-right: auto;
   position: relative;
   & input {
+    font-family: inherit;
     width: 320px;
     border: none;
     outline: none;
@@ -16,15 +17,30 @@
   background-color: #f5f3f0;
   position: absolute;
   top: 100%;
+  width: 320px;
   left: 0;
   z-index: 2;
 }
+.notFound {
+  width: 100% !important;
+  padding: 10px;
+  text-align: center;
+  background-color: #f5f3f0;
+}
 .menuLink {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  text-align: left;
+  padding: 0;
   width: 320px;
   white-space: nowrap;
   padding: 6px;
   color: #666;
+  text-overflow: ellipsis;
   text-decoration: none;
+  overflow: hidden;
   &:hover {
     background-color: #80241e;
     color: white;

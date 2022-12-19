@@ -1,41 +1,76 @@
 import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import styles from './SelectLink.module.scss';
+import axios from 'axios';
+import { apiUrl } from '../../../utils/apiUrl';
+import { useNavigate } from 'react-router';
+import OutsideClickHandler from 'react-outside-click-handler';
 const SelectLink = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const [houseSearch, setHouseSearch] = useState('');
+  const [houseSearchList, setHouseSearchList] = useState([]);
+  const [getPageList, setGetPageList] = useState({ loading: true });
+  useEffect(() => {
+    axios
+      .get(apiUrl('page/list'), {
+        params: {
+          type: 'house',
+        },
+      })
+      .then((res) => {
+        setGetPageList({ loading: false, data: res.data });
+      })
+      .catch((res) => {
+        setGetPageList({ loading: false, error: true });
+      });
+  }, []);
+  useEffect(() => {
+    if (houseSearch) {
+      const filterAllHouse = getPageList?.data?.filter((item) => item?.name?.includes(houseSearch));
+      setHouseSearchList(filterAllHouse);
+    } else {
+      setHouseSearchList(getPageList?.data);
+    }
+  }, [houseSearch, getPageList]);
+
+  const navigate = useNavigate();
   return (
     <div className={clsx(styles.wrap)}>
       <input
         type="text"
         placeholder="Выберите дом"
+        value={houseSearch}
+        onChange={(e) => {
+          setHouseSearch(e.target.value);
+        }}
         onFocus={() => {
           setShowMenu(true);
         }}
-        onBlur={() => {
-          setShowMenu(false);
-        }}
       />
+
       {showMenu && (
-        <div className={clsx(styles.menu)}>
-          <a href="#" className={clsx(styles.menuLink)}>
-            г. Санкт-Петербург, ул. Рубинштейна, д. 20
-          </a>
-          <a href="#" className={clsx(styles.menuLink)}>
-            г. Всеволожск, пр. Добровольского, д.22, корп.1
-          </a>
-          <a href="#" className={clsx(styles.menuLink)}>
-            г. Всеволожск, ул. Северная, д. 4
-          </a>
-          <a href="#" className={clsx(styles.menuLink)}>
-            г. Всеволожск, ул. Шишканя, д. 12
-          </a>
-          <a href="#" className={clsx(styles.menuLink)}>
-            г. Всеволожск, ул. Культуры, д. 4/80
-          </a>
-          <a href="#" className={clsx(styles.menuLink)}>
-            г. Всеволожск, пр. Октябрьский, д. 53
-          </a>
-        </div>
+        <OutsideClickHandler
+          onOutsideClick={() => {
+            setShowMenu(false);
+          }}>
+          <div className={clsx(styles.menu)}>
+            {houseSearchList?.length >= 1 ? (
+              houseSearchList?.map((item) => (
+                <button
+                  onClick={() => {
+                    setShowMenu(false);
+                    navigate(`/house/${item?.slug}`);
+                  }}
+                  title={item?.name}
+                  className={clsx(styles.menuLink)}>
+                  {item?.name}
+                </button>
+              ))
+            ) : (
+              <div class={styles.notFound}>Ничего не найдено</div>
+            )}
+          </div>
+        </OutsideClickHandler>
       )}
     </div>
   );

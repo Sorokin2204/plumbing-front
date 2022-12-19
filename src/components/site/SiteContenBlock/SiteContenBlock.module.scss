@@ -1,0 +1,33 @@
+.wrapper {
+  & img {
+    display: block;
+    max-width: 80%;
+  }
+  margin-bottom: 70px;
+}
+
+.fileList {
+  padding: 10px 0 20px;
+  display: flex;
+  flex-direction: column;
+}
+.fileItem {
+  list-style: none;
+  & + & {
+    margin-top: 15px;
+  }
+}
+.fileLink {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  color: #80241e;
+  width: min-content;
+  white-space: nowrap;
+  cursor: pointer;
+  & div {
+    display: inline-block;
+    border-bottom: 1px solid #80241e;
+  }
+}

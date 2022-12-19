@@ -35,7 +35,7 @@ const HouseAddEdit = ({ data = null }) => {
               { name: 'Протоколы', content: [] },
               { name: 'Поставщики', content: [] },
               { name: 'Отчеты', content: [] },
-              { name: 'Протоколы', content: [] },
+              { name: 'Должники', content: [] },
             ],
           },
         ],
@@ -99,7 +99,7 @@ const HouseAddEdit = ({ data = null }) => {
             <Tab label="Протоколы" {...a11yProps(2)} />
             <Tab label="Поставщики" {...a11yProps(3)} />
             <Tab label="Отчеты" {...a11yProps(4)} />
-            <Tab label="Протоколы" {...a11yProps(5)} />
+            <Tab label="Должники" {...a11yProps(5)} />
           </Tabs>
         </Box>
         <TabPanel sx={{ padding: 0 }} value={value} index={0}>

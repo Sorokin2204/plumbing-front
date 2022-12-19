@@ -66,6 +66,14 @@ const PageAddEdit = ({ isNews = false, data = null, textCreate, textSave, redire
           Сохранить
         </Button>
       </Box>
+      {isNews && (
+        <Controller
+          name="newsDesc"
+          control={contentForm.control}
+          rules={{ required: true }}
+          render={({ field }) => <TextField error={errors?.newsDesc} sx={{ width: '100%', mt: 3, mb: 3 }} rows={5} multiline helperText={errors?.newsDesc && 'Заполните поле'} label={'Краткое описание'} {...field} />}
+        />
+      )}
 
       <Box sx={{ mt: 4 }}>
         <Typography sx={{ fontWeight: '600', fontSize: '24px', textAlign: 'center' }}>Контент</Typography> <PageContentList form={contentForm} name="pageContent" />

@@ -6,6 +6,7 @@ import HeaderBottom from './components/site/HeaderBottom/HeaderBottom';
 import HomeBanners from './components/site/HomeBanners/HomeBanners';
 import HomeNavigation from './components/site/HomeNavigation/HomeNavigation';
 import MainNews from './components/site/MainNews/MainNews';
+import SiteLayout from './components/site/SiteLayout/SiteLayout';
 import AdminHouseCreate from './pages/admin/AdminHouseCreate/AdminHouseCreate';
 import AdminHouseList from './pages/admin/AdminHouseList/AdminHouseList';
 import AdminHouseUpdate from './pages/admin/AdminHouseUpdate/AdminHouseUpdate';
@@ -17,10 +18,63 @@ import AdminPageCreate from './pages/admin/AdminPageCreate/AdminPageCreate';
 import AdminPageList from './pages/admin/AdminPageList/AdminPageList';
 import AdminPageUpdate from './pages/admin/AdminPageUpdate/AdminPageUpdate';
 import HomePage from './pages/site/HomePage';
+import HouseListPage from './pages/site/HouseListPage';
+import HousePage from './pages/site/HousePage';
+import NewsListPage from './pages/site/NewsListPage';
+import NewsPage from './pages/site/NewsPage';
+import SimplePage from './pages/site/SimplePage';
 
 function App() {
   let routes = useRoutes([
-    { path: '/', element: <HomePage /> },
+    {
+      path: '/',
+      element: (
+        <SiteLayout>
+          <HomePage />
+        </SiteLayout>
+      ),
+    },
+    {
+      path: '/:slug',
+      element: (
+        <SiteLayout>
+          <SimplePage />
+        </SiteLayout>
+      ),
+    },
+    {
+      path: 'news/list',
+      element: (
+        <SiteLayout>
+          <NewsListPage />
+        </SiteLayout>
+      ),
+    },
+    {
+      path: '/news/:slug',
+      element: (
+        <SiteLayout>
+          <NewsPage />
+        </SiteLayout>
+      ),
+    },
+    {
+      path: 'house/list',
+      element: (
+        <SiteLayout>
+          <HouseListPage />
+        </SiteLayout>
+      ),
+    },
+
+    {
+      path: 'house/:slug',
+      element: (
+        <SiteLayout>
+          <HousePage />
+        </SiteLayout>
+      ),
+    },
     {
       path: '/admin/page/create',
       element: (

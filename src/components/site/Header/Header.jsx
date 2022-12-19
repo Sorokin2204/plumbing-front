@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import styles from './Header.module.scss';
+import { Link } from 'react-router-dom';
 const Header = () => {
   return (
     <header className={clsx(styles.wrap)}>
@@ -18,7 +19,10 @@ const Header = () => {
           <div className={clsx(styles.infoValue)}>5-ugol2020@mail.ru</div>
         </div>
       </div>
-      <img src="/img/logo.png" alt="" className={clsx(styles.logo)} />
+      <Link to="/">
+        {' '}
+        <img src="/img/logo.png" alt="" className={clsx(styles.logo)} />
+      </Link>
       <div className={clsx(styles.right)}>
         {' '}
         <div className={clsx(styles.infoLine)}>
@@ -37,9 +41,12 @@ const Header = () => {
           <div className={clsx(styles.infoValue)}>(812)242-10-42, (931)539-08-59</div>
         </div>{' '}
         <div className={clsx(styles.info)}>
-          <div className={clsx(styles.infoLabel)}><a href="#" className={clsx(styles.infoSocialItem)}>Мы во ВКонтакте</a></div>
-          <div className={clsx(styles.infoSocial)}>      
+          <div className={clsx(styles.infoLabel)}>
+            <a href="#" className={clsx(styles.infoSocialItem)}>
+              Мы во ВКонтакте
+            </a>
           </div>
+          <div className={clsx(styles.infoSocial)}></div>
         </div>
       </div>
     </header>
