@@ -1,4 +1,5 @@
 import { Download, FileCopy } from '@mui/icons-material';
+import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
 import { Interweave } from 'interweave';
 import React from 'react';
 import { Quill } from 'react-quill';
@@ -6,7 +7,18 @@ import SiteContentTable from '../SiteContentTable/SiteContentTable';
 import SiteTabs from '../FormCheckout/SiteTabs/SiteTabs';
 import styles from './SiteContenBlock.module.scss';
 import { saveAs } from 'file-saver';
+import axios from 'axios';
+import fileDownload from 'js-file-download';
 const SiteContenBlock = (data) => {
+  const handleDownload = (url, filename) => {
+    axios
+      .get(url, {
+        responseType: 'blob',
+      })
+      .then((res) => {
+        fileDownload(res.data, filename);
+      });
+  };
   function getContentBlock({ map, list, type, value, pageContentId, pageType }) {
     switch (type) {
       case 'editor':
@@ -18,17 +30,18 @@ const SiteContenBlock = (data) => {
       case 'files':
         return (
           <div class={styles.wrapper}>
-            <h2>Файлы</h2>
             <ul class={styles.fileList}>
               {value?.map((item) => (
                 <li class={styles.fileItem}>
                   <a
                     onClick={() => {
-                      saveAs(`${process.env.REACT_APP_SITE_URL}/${item?.path}`, item?.name);
+                      var re = /(?:\.([^.]+))?$/;
+                      handleDownload(`${process.env.REACT_APP_SITE_URL}/${item?.path}`, `${item?.name}.${re.exec(item?.path)[1]}`);
                     }}
                     class={styles.fileLink}>
+                    <InsertDriveFileIcon sx={{ fontSize: '16px', mt: '4px', mr: 0.5 }} />
                     <div> {item?.name}</div>
-                    <Download sx={{ fontSize: '16px', mt: '4px', ml: 0.5 }} />
+                    {/* <Download /> */}
                   </a>
                 </li>
               ))}

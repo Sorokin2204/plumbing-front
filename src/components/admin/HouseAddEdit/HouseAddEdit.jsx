@@ -31,10 +31,8 @@ const HouseAddEdit = ({ data = null }) => {
           {
             type: 'tabs',
             value: [
-              { name: 'Договор', content: [] },
-              { name: 'Протоколы', content: [] },
+              { name: 'Документы', content: [] },
               { name: 'Поставщики', content: [] },
-              { name: 'Отчеты', content: [] },
               { name: 'Должники', content: [] },
             ],
           },
@@ -95,10 +93,10 @@ const HouseAddEdit = ({ data = null }) => {
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <Tabs variant="fullWidth" value={value} onChange={handleChange} aria-label="basic tabs example">
             <Tab label="Характеристики" {...a11yProps(0)} />
-            <Tab label="Договор" {...a11yProps(1)} />
-            <Tab label="Протоколы" {...a11yProps(2)} />
+            <Tab label="Документы" {...a11yProps(1)} />
+            {/* <Tab label="Протоколы" {...a11yProps(2)} /> */}
             <Tab label="Поставщики" {...a11yProps(3)} />
-            <Tab label="Отчеты" {...a11yProps(4)} />
+            {/* <Tab label="Отчеты" {...a11yProps(4)} /> */}
             <Tab label="Должники" {...a11yProps(5)} />
           </Tabs>
         </Box>

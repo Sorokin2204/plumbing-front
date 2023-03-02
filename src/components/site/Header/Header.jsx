@@ -19,9 +19,9 @@ const Header = () => {
           <div className={clsx(styles.infoValue)}>5-ugol2020@mail.ru</div>
         </div>
       </div>
-      <Link to="/">
+      <Link to="/" className={clsx(styles.logo)}>
         {' '}
-        <img src="/img/logo.png" alt="" className={clsx(styles.logo)} />
+        <img src="/img/logo.png" alt="" />
       </Link>
       <div className={clsx(styles.right)}>
         {' '}

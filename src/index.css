@@ -208,3 +208,21 @@ body {
   margin-top: 20px;
   border-radius: 4px;
 }
+#toggleHelper {
+  background-color: #888;
+}
+#helperLibrary {
+  top: 2%;
+}
+
+p {
+margin-top: 0px;
+margin-bottom: 0px;
+}
+
+em {
+
+display: inline-block;
+min-height: 14px;
+min-width: 14px;
+}

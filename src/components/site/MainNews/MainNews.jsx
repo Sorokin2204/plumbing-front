@@ -9,6 +9,8 @@ import moment from 'moment';
 import { useNavigate } from 'react-router';
 
 const MainNews = () => {
+  const [getPageBreakingList, setGetPageBreakingList] = useState(null);
+  const [getPageDocsList, setGetPageDocsList] = useState(null);
   const [getPageList, setGetPageList] = useState(null);
   useEffect(() => {
     axios
@@ -16,6 +18,32 @@ const MainNews = () => {
         params: {
           type: 'news',
           isBreakingNews: true,
+        },
+      })
+      .then((res) => {
+        setGetPageBreakingList({ loading: false, data: res.data });
+      })
+      .catch((res) => {
+        setGetPageBreakingList({ loading: false, error: true });
+      });
+    axios
+      .get(apiUrl('page/list'), {
+        params: {
+          type: 'news',
+          isDocsNews: true,
+        },
+      })
+      .then((res) => {
+        setGetPageDocsList({ loading: false, data: res.data });
+      })
+      .catch((res) => {
+        setGetPageDocsList({ loading: false, error: true });
+      });
+    axios
+      .get(apiUrl('page/list'), {
+        params: {
+          type: 'news',
+          limit: true,
         },
       })
       .then((res) => {
@@ -27,22 +55,50 @@ const MainNews = () => {
   }, []);
   const navigate = useNavigate();
   return (
-    <div className={clsx(styles.wrap)}>
-      <div className={clsx(styles.head)}>
-        <BoltRounded style={{ color: '#F2C846', fontSize: '30px', marginBottom: '4px', position: 'absolute', left: '-26px', top: '-9px' }} />
-        СРОЧНЫЕ ОБЪЯВЛЕНИЯ
-      </div>
+    <div className={clsx(styles.wrap, 'container')}>
       <div className={clsx(styles.list)}>
-        {getPageList?.data?.map((item) => (
-          <div
-            className={clsx(styles.item)}
-            onClick={() => {
-              navigate(`/news/${item?.slug}`);
-            }}>
-            <div className={clsx(styles.date)}>{moment(item?.newsDate).format('DD.MM.YYYY').toString()}</div>
-            <div className={clsx(styles.name)}>{item?.name}</div>
+        <div>
+          <div className={clsx(styles.head)}>Новости</div>
+          {getPageList?.data?.map((item) => (
+            <div
+              className={clsx(styles.item)}
+              onClick={() => {
+                navigate(`/news/${item?.slug}`);
+              }}>
+              <div className={clsx(styles.date)}>{moment(item?.newsDate).format('DD.MM.YYYY').toString()}</div>
+              <div className={clsx(styles.name)}>{item?.name}</div>
+            </div>
+          ))}
+        </div>
+        <div>
+          <div className={clsx(styles.head)}>
+            <BoltRounded style={{ color: '#F2C846', fontSize: '30px', marginBottom: '4px', position: 'absolute', left: '-30px', top: '-9px' }} />
+            СРОЧНЫЕ ОБЪЯВЛЕНИЯ
           </div>
-        ))}
+          {getPageBreakingList?.data?.map((item) => (
+            <div
+              className={clsx(styles.item)}
+              onClick={() => {
+                navigate(`/news/${item?.slug}`);
+              }}>
+              <div className={clsx(styles.date)}>{moment(item?.newsDate).format('DD.MM.YYYY').toString()}</div>
+              <div className={clsx(styles.name)}>{item?.name}</div>
+            </div>
+          ))}
+        </div>
+        <div>
+          <div className={clsx(styles.head)}>Нормативные документы</div>
+          {getPageDocsList?.data?.map((item) => (
+            <div
+              className={clsx(styles.item)}
+              onClick={() => {
+                navigate(`/news/${item?.slug}`);
+              }}>
+              <div className={clsx(styles.date)}>{moment(item?.newsDate).format('DD.MM.YYYY').toString()}</div>
+              <div className={clsx(styles.name)}>{item?.name}</div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

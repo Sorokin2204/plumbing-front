@@ -10,7 +10,7 @@ import InfoAlert from '../InfoAlert/InfoAlert';
 import Loading from '../Loading/Loading';
 import styles from './PageAddEdit.module.scss';
 const PageAddEdit = ({ isNews = false, data = null, textCreate, textSave, redirectAfterSave }) => {
-  const defaultValues = data ? data : { name: '', slug: '', pageContent: [], dateNews: moment().format('YYYY-MM-DD').toString(), isBreakingNews: false };
+  const defaultValues = data ? data : { name: '', slug: '', pageContent: [], dateNews: moment().format('YYYY-MM-DD').toString(), isBreakingNews: false, isDocsNews: false };
   const contentForm = useForm({ defaultValues });
   const [pageContentRequest, setPageContentRequest] = useState(null);
   const [showAlert, setShowAlert] = useState(false);
@@ -27,7 +27,7 @@ const PageAddEdit = ({ isNews = false, data = null, textCreate, textSave, redire
   };
   console.log(contentForm.watch());
   const isBreakingNews = contentForm.watch('isBreakingNews');
-  console.log('WTCHC', isBreakingNews);
+  const isDocsNews = contentForm.watch('isDocsNews');
   const dateNews = contentForm.watch('dateNews');
   const errors = contentForm?.formState?.errors;
   return (
@@ -58,6 +58,14 @@ const PageAddEdit = ({ isNews = false, data = null, textCreate, textSave, redire
               }}
               control={<Checkbox checked={isBreakingNews} />}
               label="Срочная новость"
+            />
+            <FormControlLabel
+              value={isDocsNews}
+              onChange={(e) => {
+                contentForm.setValue('isDocsNews', e.target.checked);
+              }}
+              control={<Checkbox checked={isDocsNews} />}
+              label="Нормативные документы"
             />
           </Box>
         )}

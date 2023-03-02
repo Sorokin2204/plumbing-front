@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import styles from './HeaderBottom.module.scss';
 import SelectLink from '../SelectLink/SelectLink';
 import SearchHeader from '../SearchHeader/SearchHeader';
+import HeaderMenu from '../HeaderMenu/HeaderMenu';
 const HeaderBottom = () => {
   return (
     <div class="container">
@@ -11,6 +12,7 @@ const HeaderBottom = () => {
         <SelectLink />
         <SearchHeader />
       </div>
+      <HeaderMenu />
     </div>
   );
 };

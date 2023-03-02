@@ -3,6 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: #fff;
 }
 .left {
   margin-top: 14px;
@@ -55,7 +56,8 @@
   }
 }
 .logo {
-  margin-left: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .right {
   margin-top: 27px;
