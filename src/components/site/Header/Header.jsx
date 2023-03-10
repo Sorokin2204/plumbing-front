@@ -27,7 +27,7 @@ const Header = () => {
         {' '}
         <div className={clsx(styles.infoLine)}>
           <div className={clsx(styles.info)}>
-            <div className={clsx(styles.infoLabel)}>тел. </div>
+            <div className={clsx(styles.infoLabel)}>Офис тел. </div>
             <div className={clsx(styles.infoValue)}>(812)429-39-95</div>
           </div>
           &nbsp;{' '}
@@ -43,7 +43,7 @@ const Header = () => {
         <div className={clsx(styles.info)}>
           <div className={clsx(styles.infoLabel)}>
             <a href="#" className={clsx(styles.infoSocialItem)}>
-              Мы во ВКонтакте
+              Мы вонтакте
             </a>
           </div>
           <div className={clsx(styles.infoSocial)}></div>

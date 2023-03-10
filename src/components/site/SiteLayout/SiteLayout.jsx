@@ -14,7 +14,7 @@ const SiteLayout = ({ children }) => {
   return (
     <>
       <div class={styles.wrapper}>
-        <div style={{ backgroundImage: 'url(/img/header-img.jpg)', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: '100% 50%' }}>
+        <div style={{ backgroundImage: 'url(/img/header-img.jpg)', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
           <div class="container">
             <Header />
           </div>
