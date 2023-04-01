@@ -83,12 +83,12 @@ const FormPayment = () => {
   }, []);
 
   const onSubmit = (data) => {
-    // setLoading(true);
-    // axios.post(apiUrl('/send-form'), data).then((res) => {
-    //   setLoading(false);
-    //   setShowThanks(true);
-    //   feedbackForm.reset();
-    // });
+    setLoading(true);
+    axios.post(apiUrl('send-form'), data).then((res) => {
+      if (res.data?.paymentUrl) {
+        window.location.href = res.data?.paymentUrl;
+      }
+    });
   };
 
   const [selectedOption, setSelectedOption] = useState(null);
