@@ -118,7 +118,7 @@ const FormPayment = () => {
       </label>
 
       <InputCustom form={feedbackForm} name="name" label={'Ф.И.О'} placeholder={'Введите фамилию, имя и отчество'} />
-      <InputCustom form={feedbackForm} name="docNumber" label={'Номер договора'} placeholder={'Введите номер договора'} />
+      {/* <InputCustom form={feedbackForm} name="docNumber" label={'Номер договора'} placeholder={'Введите номер договора'} /> */}
       <InputCustom form={feedbackForm} name="address" label={'Адрес'} placeholder={'Введите адрес проживания'} />
       <InputCustom isPhone label={'Телефон'} placeholder={'Введите телефон для связи'} form={feedbackForm} name={'phone'} />
       <label class={clsx('input-wrap')}>
