@@ -9,16 +9,16 @@ const HeaderMenu = () => {
         <Link to="/" className={clsx(styles.link)}>
           Главная
         </Link>
-        <Link to="/" className={clsx(styles.link)}>
+        <Link to="/contact" className={clsx(styles.link)}>
           Контакты
         </Link>
-        <Link to="/" className={clsx(styles.link)}>
+        <Link to="/services" className={clsx(styles.link)}>
           Услуги
         </Link>
-        <Link to="/" className={clsx(styles.link)}>
+        <Link to="/news/list" className={clsx(styles.link)}>
           Новости
         </Link>
-        <Link to="/" className={clsx(styles.link)}>
+        <Link to="/vacancies/" className={clsx(styles.link)}>
           Вакансии
         </Link>
       </div>

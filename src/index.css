@@ -2,7 +2,7 @@
 
 body {
   margin: 0;
-  font-family: 'Mulish', sans-serif;
+  font-family: 'Times New Roman', Times, serif;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -217,13 +217,12 @@ body {
 }
 
 p {
-margin-top: 0px;
-margin-bottom: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 em {
-
-display: inline-block;
-min-height: 14px;
-min-width: 14px;
+  display: inline-block;
+  min-height: 14px;
+  min-width: 14px;
 }
