@@ -44,6 +44,7 @@ const MainNews = () => {
         params: {
           type: 'news',
           limit: true,
+          isHome: true,
         },
       })
       .then((res) => {

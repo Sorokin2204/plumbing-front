@@ -12,8 +12,9 @@ const HomeBanner1 = () => {
         </div>
         <div className={clsx(styles.bottom)}>
           <div className={clsx(styles.bottomText)}>
-            заявки по аварийным ситуациям<br />
-			вызов ремонтного персонала
+            заявки по аварийным ситуациям
+            <br />
+            вызов ремонтного персонала
           </div>
           <img src="/img/banner-icon-1.png" alt="" className={clsx(styles.bottomImg)} />
         </div>

@@ -9,7 +9,6 @@
   margin-bottom: 40px;
 }
 .fullBanner {
-  width: calc(100% + 10px);
-  margin-left: -10px;
-  margin-bottom: 30px;
+  margin: 0 auto;
+  display: block;
 }

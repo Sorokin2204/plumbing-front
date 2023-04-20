@@ -6,10 +6,15 @@ const HomeBanner3 = () => {
     <div className={clsx(styles.wrap)}>
       <div className={clsx(styles.content)}>
         <div className={clsx(styles.title)}>БУХГАЛТЕРИЯ</div>
-<div className={clsx(styles.centerText)}>+7(812)429-39-95</div>
-          <div className={clsx(styles.subtitle)}><b>Фирфарова  Ирина Сергеевна</b></div>
+        <div className={clsx(styles.centerText)}>+7(812)429-39-95</div>
+        <div className={clsx(styles.subtitle)}>
+          <b></b>
+        </div>
         <div className={clsx(styles.bottom)}>
-          <div className={clsx(styles.bottomText)}>Часы приема бухгалтерии: Понедельник, среда, пятница<br/>с 9-00 до 13-00</div>
+          <div className={clsx(styles.bottomText)}>
+            Часы приема бухгалтерии: Понедельник, среда, пятница
+            <br />с 9-00 до 13-00
+          </div>
           <img src="/img/banner-icon-3.png" alt="" className={clsx(styles.bottomImg)} />
         </div>
       </div>

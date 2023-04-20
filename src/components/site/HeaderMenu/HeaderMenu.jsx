@@ -9,6 +9,9 @@ const HeaderMenu = () => {
         <Link to="/" className={clsx(styles.link)}>
           Главная
         </Link>
+        <Link to="/about" className={clsx(styles.link)}>
+          О компании
+        </Link>
         <Link to="/contact" className={clsx(styles.link)}>
           Контакты
         </Link>

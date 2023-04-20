@@ -12,7 +12,9 @@ const HomeBanners = () => {
         <HomeBanner2 />
         <HomeBanner3 />
       </div>
-      <img src="/img/banner-full.png" alt="" className={clsx(styles.fullBanner)} />
+      <a href="https://infocit.ellis.ru/joomla/index.php/oplata">
+        <img src="/img/banner-full.png" alt="" className={clsx(styles.fullBanner)} />
+      </a>
     </div>
   );
 };
