@@ -6,9 +6,9 @@ body {
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 14px;
+  font-size: 16px;
   color: #000;
-  font-weight: 600;
+  font-weight: 400;
 }
 * {
   box-sizing: border-box;
@@ -217,12 +217,13 @@ body {
 }
 
 p {
-  margin-top: 0px;
-  margin-bottom: 0px;
+margin-top: 0px;
+margin-bottom: 0px;
 }
 
 em {
-  display: inline-block;
-  min-height: 14px;
-  min-width: 14px;
+
+display: inline-block;
+min-height: 14px;
+min-width: 14px;
 }

@@ -3,8 +3,9 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 20px;
-  margin-top: 20px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  font-size: 20px;
 }
 @media (max-width: 900px) {
   .list {
@@ -12,12 +13,13 @@
   }
 }
 .link {
-  color: #000;
-  text-decoration: none;
-  padding: 4px;
-  background-color: #ffffff;
-  font-weight: 800;
+    color: #000;
+    text-decoration: none;
+    padding: 4px;
+    background-color: #ffffff;
+    font-weight: 800;
   & + & {
     margin-left: 20px;
+	font-size: 20px;
   }
 }
