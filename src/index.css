@@ -227,3 +227,7 @@ display: inline-block;
 min-height: 14px;
 min-width: 14px;
 }
+
+a {
+color: #000;
+}

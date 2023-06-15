@@ -16,7 +16,7 @@ const Header = () => {
         </div>
         <div className={clsx(styles.info)}>
           <div className={clsx(styles.infoLabel)}>e-mail: </div>
-          <div className={clsx(styles.infoValue)}>5-ugol2020@mail.ru</div>
+          <div className={clsx(styles.infoValue)}><a href="5-ugol2020@mail.ru">5-ugol2020@mail.ru</a></div>
         </div>
       </div>
       <Link to="/" className={clsx(styles.logo)}>
@@ -42,7 +42,7 @@ const Header = () => {
         </div>{' '}
         <div className={clsx(styles.info)}>
           <div className={clsx(styles.infoLabel)}>
-            <a href="#" className={clsx(styles.infoSocialItem)}>
+            <a href="https://vk.com/club203787986" className={clsx(styles.infoSocialItem)}>
               Мы вонтакте
             </a>
           </div>

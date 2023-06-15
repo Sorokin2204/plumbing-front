@@ -38,7 +38,7 @@ const HomeNavigation = () => {
             navigate('/services');
           }}>
           <img src="/img/nav-4.png" alt="" className={clsx(styles.icon)} />
-          <div className={clsx(styles.name)}>Услуги</div>
+          <div className={clsx(styles.name)}>Платные услуги</div>
         </div>
         <div
           className={clsx(styles.item)}
@@ -54,7 +54,7 @@ const HomeNavigation = () => {
             navigate('/report');
           }}>
           <img src="/img/nav-6.png" alt="" className={clsx(styles.icon)} />
-          <div className={clsx(styles.name)}>Отчеты о выполненных работах</div>
+          <div className={clsx(styles.name)}>Отчеты по МКД за год</div>
         </div>
         <div
           className={clsx(styles.item)}
@@ -62,7 +62,7 @@ const HomeNavigation = () => {
             navigate('/information');
           }}>
           <img src="/img/nav-7.png" alt="" className={clsx(styles.icon)} />
-          <div className={clsx(styles.name)}>Раскрытие информации</div>
+          <div className={clsx(styles.name)}>ФХД Компании</div>
         </div>
         <div
           className={clsx(styles.item)}
