@@ -23,13 +23,13 @@ const SiteContenBlock = (data) => {
     switch (type) {
       case 'editor':
         return (
-          <div class={styles.wrapper}>
+          <div class={styles.wrapper} style={{ marginBottom: '10px' }}>
             <Interweave content={value} />
           </div>
         );
       case 'files':
         return (
-          <div class={styles.wrapper}>
+          <div class={styles.wrapper} style={{ marginBottom: '5px' }}>
             <ul class={styles.fileList}>
               {value?.map((item) => (
                 <li class={styles.fileItem}>

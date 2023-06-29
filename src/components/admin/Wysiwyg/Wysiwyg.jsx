@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import ReactQuill, { Quill } from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import CustomToolbar from './CustomToolbar';
+import UploadEditorFile from '../AdminTableList/UploadEditorFile/UploadEditorFile';
 const Wysiwyg = ({ name, form, id, className = 'quill-custom' }) => {
   const watchValue = form.watch(`${name}.value`);
   function imageHandler() {
@@ -29,6 +30,7 @@ const Wysiwyg = ({ name, form, id, className = 'quill-custom' }) => {
   );
   return (
     <>
+      <UploadEditorFile />
       <CustomToolbar id={id} />
       <ReactQuill
         className={className}

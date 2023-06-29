@@ -109,7 +109,7 @@ const HouseAddEdit = ({ data = null }) => {
             <div>
               <YMaps>
                 <div>
-                  <Map onClick={(e) => setPointMap(e._sourceEvent.originalEvent.coords)} height="500px" width="auto" defaultState={{ center: pointMap ? pointMap : [55.748098, 37.621071], zoom: pointMap ? 18 : 12 }}>
+                  <Map onClick={(e) => setPointMap(e._sourceEvent.originalEvent.coords)} height="500px" width="auto" defaultState={{ center: pointMap ? pointMap : [59.938955, 30.315644], zoom: pointMap ? 18 : 12 }}>
                     {' '}
                     <Placemark
                       key={1}

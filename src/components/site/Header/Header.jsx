@@ -16,7 +16,11 @@ const Header = () => {
         </div>
         <div className={clsx(styles.info)}>
           <div className={clsx(styles.infoLabel)}>e-mail: </div>
-          <div className={clsx(styles.infoValue)}><a href="5-ugol2020@mail.ru">5-ugol2020@mail.ru</a></div>
+          <div className={clsx(styles.infoValue)}>
+            <a href="5-ugol2020@mail.ru" style={{ backgroundColor: '#9bcadf' }}>
+              5-ugol2020@mail.ru
+            </a>
+          </div>
         </div>
       </div>
       <Link to="/" className={clsx(styles.logo)}>
