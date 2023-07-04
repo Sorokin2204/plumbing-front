@@ -27,7 +27,7 @@ const UploadEditorFile = () => {
         Загрузить файл
       </Button>{' '}
       <Box sx={{ marginTop: '16px', display: 'flex', alignItems: 'start', flexWrap: 'wrap' }}>
-        <TextField onFocus={(event) => event.target.select()} sx={{ '& input': { width: '490px' }, display: 'block', marginBottom: '16px' }} size="small" value={uploadedImage?.path ? `${process.env.REACT_APP_SERVER_URL}/${uploadedImage?.path}` : ''} onChange={() => {}} />
+        <TextField onFocus={(event) => event.target.select()} sx={{ '& input': { width: '490px' }, display: 'block', marginBottom: '16px' }} size="small" value={uploadedImage?.path ? `${process.env.REACT_APP_SERVER_URL}/files/${uploadedImage?.path}` : ''} onChange={() => {}} />
         <input type="file" onChange={onImageChange} style={{ display: 'none' }} ref={hiddenFileInput} accept="image/png, image/jpeg, image/jpg" />
         <Box sx={{ marginLeft: '20px', fontSize: '13px', opacity: '0.7' }}>
           1. Загрузите файл <br /> 2. Скопируйте ссылку <br /> 3. Нажмите на икноку "фотографии" <br />

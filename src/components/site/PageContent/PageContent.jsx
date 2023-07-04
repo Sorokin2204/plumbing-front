@@ -6,10 +6,10 @@ import FormFeedback from '../FormFeedback/FormFeedback';
 import FormPayment from '../FormPayment/FormPayment';
 import SiteContenBlock from '../SiteContenBlock/SiteContenBlock';
 import styles from './PageContent.module.scss';
-const PageContent = ({ name, pageContent, type, isFormPay, isFormCheckout, isFormFeedback, map, list, newsDate }) => {
+const PageContent = ({ name, pageContent, type, isFormPay, isFormCheckout, isFormFeedback, map, list, dateNews }) => {
   return (
     <div class={clsx('container', styles.wrap)}>
-      {type === 'news' && <div className={styles.date}>{moment(newsDate).format('DD.MM.YYYY').toString()}</div>}
+      {type === 'news' && <div className={styles.date}>{moment(dateNews).format('DD.MM.YYYY').toString()}</div>}
       <h1 className={styles.title}>{name}</h1>
       {pageContent?.map((itemContent) => (
         <SiteContenBlock {...itemContent} pageType={type} map={map} list={list} />

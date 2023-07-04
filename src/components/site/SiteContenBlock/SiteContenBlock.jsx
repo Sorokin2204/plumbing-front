@@ -34,14 +34,15 @@ const SiteContenBlock = (data) => {
               {value?.map((item) => (
                 <li class={styles.fileItem}>
                   <a
-                    onClick={() => {
-                      var re = /(?:\.([^.]+))?$/;
-                      handleDownload(`${process.env.REACT_APP_SERVER_URL}/${item?.path}`, `${item?.name}.${re.exec(item?.path)[1]}`);
-                    }}
+                    // onClick={() => {
+                    //   var re = /(?:\.([^.]+))?$/;
+                    //   handleDownload(`${process.env.REACT_APP_SERVER_URL}/${item?.path}`, `${item?.name}.${re.exec(item?.path)[1]}`);
+                    // }}
+                    target="_blank"
+                    href={`${process.env.REACT_APP_SERVER_URL}/files/${item?.path}`}
                     class={styles.fileLink}>
                     <InsertDriveFileIcon sx={{ fontSize: '16px', mt: '4px', mr: 0.5 }} />
                     <div> {item?.name}</div>
-                    {/* <Download /> */}
                   </a>
                 </li>
               ))}

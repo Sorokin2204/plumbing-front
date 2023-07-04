@@ -62,7 +62,7 @@ const HomeNavigation = () => {
             navigate('/information');
           }}>
           <img src="/img/nav-7.png" alt="" className={clsx(styles.icon)} />
-          <div className={clsx(styles.name)}>ФХД Компании</div>
+          <div className={clsx(styles.name)}>Раскрытие информации</div>
         </div>
         <div
           className={clsx(styles.item)}
