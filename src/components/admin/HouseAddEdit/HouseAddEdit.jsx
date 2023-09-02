@@ -31,6 +31,7 @@ const HouseAddEdit = ({ data = null }) => {
           {
             type: 'tabs',
             value: [
+              { name: 'Характеристики', content: [] },
               { name: 'Документы', content: [] },
               { name: 'Поставщики', content: [] },
               { name: 'Должники', content: [] },
@@ -92,109 +93,24 @@ const HouseAddEdit = ({ data = null }) => {
       <Box sx={{ width: '100%' }}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <Tabs variant="fullWidth" value={value} onChange={handleChange} aria-label="basic tabs example">
-            <Tab label="Характеристики" {...a11yProps(0)} />
-            <Tab label="Документы" {...a11yProps(1)} />
-            {/* <Tab label="Протоколы" {...a11yProps(2)} /> */}
+            <Tab label="Характеристики" {...a11yProps(1)} />
+            <Tab label="Документы" {...a11yProps(2)} />
             <Tab label="Поставщики" {...a11yProps(3)} />
-            {/* <Tab label="Отчеты" {...a11yProps(4)} /> */}
-            <Tab label="Должники" {...a11yProps(5)} />
+            <Tab label="Должники" {...a11yProps(4)} />
           </Tabs>
         </Box>
-        <TabPanel sx={{ padding: 0 }} value={value} index={0}>
-          <Box
-            sx={{
-              width: '100%',
-              height: '100%',
-            }}>
-            <div>
-              <YMaps>
-                <div>
-                  <Map onClick={(e) => setPointMap(e._sourceEvent.originalEvent.coords)} height="500px" width="auto" defaultState={{ center: pointMap ? pointMap : [59.938955, 30.315644], zoom: pointMap ? 18 : 12 }}>
-                    {' '}
-                    <Placemark
-                      key={1}
-                      geometry={pointMap}
-                      properties={{
-                        hintContent: 'HELLLO',
-                        balloonContentHeader: 'Что то такое ',
-                        balloonContentBody: `<div>HELLo<div/>`,
-                      }}
-                      options={{
-                        preset: 'islands#redStretchyIcon',
-                      }}
-                    />
-                  </Map>
-                </div>
-              </YMaps>
-            </div>
-            <Box>
-              {' '}
-              {getGeoInfo?.loading ? (
-                <CircularProgress sx={{ margin: '24px auto 0 auto', display: 'flex', justifyContent: 'center' }} />
-              ) : getGeoInfo?.address ? (
-                <Box>
-                  <Box sx={{ mt: 2, fontSize: '18px', color: 'rgba(0,0,0,0.4)' }}>Выбранный адрес</Box> <Box sx={{ color: 'primary.main', fontSize: '24px', fontWeight: 600 }}>{getGeoInfo?.address}</Box>
-                </Box>
-              ) : (
-                <></>
-              )}
-            </Box>{' '}
-            <Box>
-              <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr 40px', mt: 2 }}>
-                <Box sx={{ fontWeight: '600' }}>Название</Box>
-                <Box sx={{ fontWeight: '600' }}>Значение</Box>
-                <Box></Box>
-              </Box>
-              {fields?.map((itemField, indexField) => (
-                <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr 40px', gridGap: '8px', mt: 1 }}>
-                  <TextField
-                    size="small"
-                    value={itemField.label}
-                    onChange={(e) => {
-                      update(indexField, { ...itemField, label: e.target.value });
-                    }}
-                  />
-                  <TextField
-                    size="small"
-                    value={itemField.value}
-                    onChange={(e) => {
-                      update(indexField, { ...itemField, value: e.target.value });
-                    }}
-                  />
-                  <IconButton
-                    onClick={() => {
-                      if (fields?.length > 1) {
-                        remove(indexField);
-                      }
-                    }}>
-                    <Delete color="error" />
-                  </IconButton>
-                </Box>
-              ))}
-              <IconButton
-                onClick={() => {
-                  append({ label: '', value: '' });
-                }}
-                sx={{ m: '0 auto', display: 'flex', transform: 'translateX(-24px)' }}>
-                <AddCircleOutline sx={{ fontSize: '30px', color: 'success.light' }} />
-              </IconButton>
-            </Box>
-          </Box>
-        </TabPanel>
-        <TabPanel value={value} index={1}>
+
+        <TabPanel value={value} index={0}>
           <PageContentList form={contentForm} name="pageContent[0].value[0].content" />
         </TabPanel>
-        <TabPanel value={value} index={2}>
+        <TabPanel value={value} index={1}>
           <PageContentList form={contentForm} name="pageContent[0].value[1].content" />
         </TabPanel>
-        <TabPanel value={value} index={3}>
+        <TabPanel value={value} index={2}>
           <PageContentList form={contentForm} name="pageContent[0].value[2].content" />
         </TabPanel>
-        <TabPanel value={value} index={4}>
+        <TabPanel value={value} index={3}>
           <PageContentList form={contentForm} name="pageContent[0].value[3].content" />
-        </TabPanel>
-        <TabPanel value={value} index={5}>
-          <PageContentList form={contentForm} name="pageContent[0].value[4].content" />
         </TabPanel>
       </Box>
       {pageContentRequest?.loading && <Loading />}

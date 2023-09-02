@@ -15,8 +15,8 @@ const SiteTabs = ({ data, pageType, map, list }) => {
 
   return (
     <div className={styles.tabWrapper}>
-      <div className={clsx(styles.tabList)} style={{ gridTemplateColumns: `repeat(${isHouse ? data?.length + 1 : data?.length},1fr)` }}>
-        {isHouse && (
+      <div className={clsx(styles.tabList)} style={{ gridTemplateColumns: `repeat(${data?.length},1fr)` }}>
+        {/* {isHouse && (
           <button
             onClick={() => {
               setActiveTab(0);
@@ -24,18 +24,18 @@ const SiteTabs = ({ data, pageType, map, list }) => {
             className={clsx(styles.tab, activeTab === 0 && styles.tabActive)}>
             Характеристики
           </button>
-        )}
+        )} */}
         {data?.map((item, index) => (
           <button
             onClick={() => {
-              setActiveTab(isHouse ? index + 1 : index);
+              setActiveTab(index);
             }}
-            className={clsx(styles.tab, activeTab === (isHouse ? index + 1 : index) && styles.tabActive)}>
+            className={clsx(styles.tab, activeTab === index && styles.tabActive)}>
             {item?.name}
           </button>
         ))}
       </div>
-      {isHouse && activeTab == 0 && (
+      {/* {isHouse && activeTab == 0 && (
         <div>
           <div className={clsx(styles.tabMap, mapLoaded && styles.tabMapShow)}>
             <YMaps>
@@ -71,8 +71,8 @@ const SiteTabs = ({ data, pageType, map, list }) => {
             </div>
           </div>
         </div>
-      )}
-      <div className="">{data?.map((item, index) => activeTab == (isHouse ? index + 1 : index) && item?.content?.map((itemTab) => <SiteContenBlock {...itemTab} />))}</div>
+      )} */}
+      <div className="">{data?.map((item, index) => activeTab == index && item?.content?.map((itemTab) => <SiteContenBlock {...itemTab} />))}</div>
     </div>
   );
 };
